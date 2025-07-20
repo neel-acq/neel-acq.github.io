@@ -1239,7 +1239,7 @@ export function ToolPage() {
               dataKey="value"
             >
               {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
+                <Cell key={`cell-${index}`} fill={"color" in entry ? entry.color : "#8884d8"} />
               ))}
             </Pie>
             <Tooltip formatter={(value) => `₹${Number(value).toLocaleString()}`} />
