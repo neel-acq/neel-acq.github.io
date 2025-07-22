@@ -2,16 +2,8 @@
   "version": 3,
   "pages404": true,
   "caseSensitive": false,
-  "basePath": "/finflip",
+  "basePath": "",
   "redirects": [
-    {
-      "source": "/finflip",
-      "destination": "/finflip/",
-      "basePath": false,
-      "internal": true,
-      "statusCode": 308,
-      "regex": "^/finflip$"
-    },
     {
       "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
       "destination": "/:file",
@@ -35,13 +27,7 @@
   ],
   "headers": [],
   "rewrites": {
-    "beforeFiles": [
-      {
-        "source": "/finflip//_next/:path+",
-        "destination": "/finflip/_next/:path+",
-        "regex": "^/finflip//_next(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))(?:/)?$"
-      }
-    ],
+    "beforeFiles": [],
     "afterFiles": [],
     "fallback": []
   },
