@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export', // ✅ Required for static export
+
+  trailingSlash: true, // ✅ Important for proper routing
+
+  basePath: '',        // ✅ No subfolder, root deployment
+  assetPrefix: '',     // ✅ No asset prefix needed
+
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // output: 'export', // Required for static HTML export
-  basePath: '', // Match your GitHub repo name
-  // assetPrefix: '/finflip/',
-  trailingSlash: true,  // Required for static HTML pages
 };
 
 module.exports = nextConfig;

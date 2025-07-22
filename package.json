@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "build:gh": "GITHUB_PAGES=true next build",
-    "deploy": "gh-pages -b static-build -d out -f"
+    "deploy": "gh-pages -b gh-pages -d out -f"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
