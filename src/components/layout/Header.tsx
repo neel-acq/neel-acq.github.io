@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { Badge } from "../ui/badge";
 import { useTheme, useAuth, useRouter } from "../../app/App";
+import Image from "next/image";
 
 export function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -34,13 +35,14 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <button 
+        <button
           onClick={() => navigate("/")}
           className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
         >
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground">₹</span>
           </div>
+          <Image src={'../app/favicon.ico'} width={32} height={32} alt="FinFlip" />
           <span className="text-xl font-semibold">FinFlip</span>
         </button>
 
@@ -50,9 +52,8 @@ export function Header() {
             <button
               key={item.path}
               onClick={() => navigate(item.path)}
-              className={`transition-colors hover:text-primary flex items-center space-x-1 ${
-                isActive(item.path) ? "text-primary" : "text-muted-foreground"
-              }`}
+              className={`transition-colors hover:text-primary flex items-center space-x-1 ${isActive(item.path) ? "text-primary" : "text-muted-foreground"
+                }`}
             >
               <span>{item.name}</span>
               {item.name === "Admin" && <Shield className="h-3 w-3" />}
@@ -152,15 +153,14 @@ export function Header() {
                   <button
                     key={item.path}
                     onClick={() => navigate(item.path)}
-                    className={`text-left py-2 text-lg transition-colors flex items-center space-x-2 ${
-                      isActive(item.path) ? "text-primary" : "text-foreground"
-                    }`}
+                    className={`text-left py-2 text-lg transition-colors flex items-center space-x-2 ${isActive(item.path) ? "text-primary" : "text-foreground"
+                      }`}
                   >
                     <span>{item.name}</span>
                     {item.name === "Admin" && <Shield className="h-4 w-4" />}
                   </button>
                 ))}
-                
+
                 {!user && (
                   <>
                     <hr className="my-4" />
