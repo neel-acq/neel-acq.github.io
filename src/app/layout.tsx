@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "FinFlip",
     images: [
       {
-        url: "/logo.png", // Put in /public
+        url: "https://finflip.vercel.app/logo.png", // Put in /public
         width: 1200,
         height: 630,
         alt: "FinFlip Preview",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FinFlip",
     description: "Flip your finances. Manage smarter.",
-    creator: "@yourhandle", // optional
-    images: ["/logo.png"],
+    creator: "@unknown", // optional
+    images: ["https://finflip.vercel.app/logo.png"],
   },
 };
 
