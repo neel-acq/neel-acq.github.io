@@ -43,8 +43,7 @@ export function Header() {
             <span className="text-primary-foreground">₹</span>
           </div> */}
           {/* <Image src={'/favicon.ico'} width={32} height={32} alt="FinFlip" /> */}
-          <img src="/favicon.svg" width={50} height={50} alt="FinFlip" className="bg-white"/>
-          
+          <img src="/favicon.svg" width={50} height={50} alt="FinFlip" className="bg-white" />
 
           <span className="text-xl font-semibold">FinFlip</span>
         </button>

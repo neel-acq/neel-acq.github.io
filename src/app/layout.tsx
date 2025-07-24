@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     creator: "@unknown", // optional
     images: ["https://finflip.vercel.app/logo.png"],
   },
+  other: {
+    "google-site-verification": "zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A",
+  },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -50,8 +56,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A" />
-        <meta name="google-site-verification" content="K_h96wph-GCQ72W4wcrSrlc9XMIB4QirpJPN9zAa9bo" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* <meta name="google-site-verification" content="zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A" /> */}
         {/* ✅ Google AdSense script */}
         <script
           async
