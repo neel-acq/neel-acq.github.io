@@ -14,24 +14,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FinFlip - Your Finance Companion",
-  description: "FinFlip helps you manage your finances efficiently.",
-  keywords: "finance, budgeting, tools, FinFlip",
+  title: "FinFlip – Smart Personal Finance Tools & Blog",
+  description: "FinFlip helps you flip your finances with powerful tools, insights, and expert blog articles.",
+  keywords: ["personal finance", "budget", "EMI calculator", "FinFlip", "money saving", "investing"],
+  metadataBase: new URL("https://finflip.vercel.app"),
   openGraph: {
-    title: "FinFlip",
-    description: "FinFlip helps you manage your finances efficiently.",
-    url: "https://finflip.vercel.app/",
+    title: "FinFlip – Smart Personal Finance Tools",
+    description: "Tools, tips, and blog articles to manage your money smarter.",
+    url: "https://finflip.vercel.app",
     siteName: "FinFlip",
     images: [
       {
-        url: "../public/logo.png",
+        url: "/logo.png", // Put in /public
         width: 1200,
         height: 630,
-        alt: "FinFlip Logo",
+        alt: "FinFlip Preview",
       },
     ],
-    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FinFlip",
+    description: "Flip your finances. Manage smarter.",
+    creator: "@yourhandle", // optional
+    images: ["/logo.png"],
   },
 };
 

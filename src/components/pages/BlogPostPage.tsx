@@ -10,7 +10,7 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 export function BlogPostPage() {
   const { params, navigate } = useRouter();
-  
+
   const mockPost = {
     id: params.postId || "1",
     title: "10 Best SIP Mutual Funds for 2025",
@@ -52,7 +52,7 @@ export function BlogPostPage() {
           <header className="mb-8">
             <Badge className="mb-4">Investment</Badge>
             <h1 className="text-3xl md:text-4xl mb-4">{mockPost.title}</h1>
-            
+
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-1">
@@ -68,7 +68,7 @@ export function BlogPostPage() {
                   <span>{mockPost.readTime}</span>
                 </div>
               </div>
-              
+
               <div className="flex space-x-2">
                 <Button variant="outline" size="sm">
                   <Share2 className="h-4 w-4" />

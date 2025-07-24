@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // ✅ Required for static export
-
+  images: {
+    unoptimized: true, // ✅ disables next/image optimization
+  },
   trailingSlash: true, // ✅ Important for proper routing
 
   basePath: '',        // ✅ No subfolder, root deployment

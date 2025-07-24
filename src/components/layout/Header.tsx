@@ -39,10 +39,13 @@ export function Header() {
           onClick={() => navigate("/")}
           className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
         >
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+          {/* <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground">₹</span>
-          </div>
-          <Image src={'../app/favicon.ico'} width={32} height={32} alt="FinFlip" />
+          </div> */}
+          {/* <Image src={'/favicon.ico'} width={32} height={32} alt="FinFlip" /> */}
+          <img src="/favicon.svg" width={50} height={50} alt="FinFlip" className="bg-white"/>
+          
+
           <span className="text-xl font-semibold">FinFlip</span>
         </button>
 
