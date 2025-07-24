@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://finflip.vercel.app
+
+# Sitemaps
+Sitemap: https://finflip.vercel.app/sitemap.xml
