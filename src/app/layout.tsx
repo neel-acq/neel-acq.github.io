@@ -56,6 +56,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="application-name" content="FinFlip" />
+        <meta name="apple-mobile-web-app-title" content="FinFlip" />
+        <meta property="og:site_name" content="FinFlip" />
+
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* <meta name="google-site-verification" content="zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A" /> */}
         {/* ✅ Google AdSense script */}
