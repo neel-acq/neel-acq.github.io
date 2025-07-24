@@ -50,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A" />
         {/* ✅ Google AdSense script */}
         <script
           async
