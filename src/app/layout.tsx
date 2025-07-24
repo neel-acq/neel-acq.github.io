@@ -48,6 +48,46 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://finflip.vercel.app"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Company",
+      "item": "https://finflip.vercel.app/about"
+    }
+  ]
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FinFlip",
+  "alternateName": "FinFlip Finance",
+  "url": "https://finflip.vercel.app",
+  "logo": "https://finflip.vercel.app/favicon.svg", // make sure this exists
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-9876543210",
+    "contactType": "Customer Support",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/finflip",
+    "https://twitter.com/finflip",
+    "https://instagram.com/finflip"
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,6 +103,15 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* <meta name="google-site-verification" content="zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A" /> */}
         {/* ✅ Google AdSense script */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060938536896052"
