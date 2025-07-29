@@ -7,6 +7,7 @@ import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
 import { useRouter } from "../../app/App";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { useEffect, useRef } from "react";
 
 export function BlogPostPage() {
   const { params, navigate } = useRouter();
@@ -40,6 +41,17 @@ export function BlogPostPage() {
     tags: ["SIP", "Mutual Funds", "Investment"],
   };
 
+  const adRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    try {
+      if (typeof window !== "undefined") {
+        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+      }
+    } catch (e) {
+      console.error("AdSense error:", e);
+    }
+  }, []);
   return (
     <div className="min-h-screen py-8 px-4">
       <div className="container mx-auto max-w-4xl">
@@ -103,7 +115,16 @@ export function BlogPostPage() {
 
         <Card className="mt-8 p-6 bg-muted/30 text-center">
           <p className="text-sm text-muted-foreground mb-2">Advertisement</p>
-          <p className="text-lg">Your Ad Could Be Here</p>
+          <div ref={adRef}>
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-6060938536896052"
+              data-ad-slot="9898725029"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+          </div>
         </Card>
       </div>
     </div>

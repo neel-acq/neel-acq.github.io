@@ -40,9 +40,6 @@ export const metadata: Metadata = {
     creator: "@unknown", // optional
     images: ["https://finflip.vercel.app/logo.png"],
   },
-  other: {
-    "google-site-verification": "zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A",
-  },
   icons: {
     icon: "/favicon.svg",
   },
@@ -101,7 +98,10 @@ export default function RootLayout({
         <meta property="og:site_name" content="FinFlip" />
 
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        {/* <meta name="google-site-verification" content="zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A" /> */}
+        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+
+        <meta name="google-site-verification" content="zJ2UKtQdEmhkKzINo6Vakhh3yUSDpNWvm7-W4EQ4I2A" />
         {/* ✅ Google AdSense script */}
         <script
           type="application/ld+json"
@@ -117,6 +117,15 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060938536896052"
           crossOrigin="anonymous"
         ></script>
+        {/* <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6060938536896052"
+     data-ad-slot="9898725029"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

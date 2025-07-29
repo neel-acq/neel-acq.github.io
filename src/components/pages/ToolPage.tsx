@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowLeft, Save, History, Share2, Plus, Trash2, Download, Calculator, TrendingUp } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
@@ -18,6 +18,18 @@ import { useRouter, useAuth } from "../../app/App";
 import { toast } from "sonner";
 
 export function ToolPage() {
+  const adRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    try {
+      if (typeof window !== "undefined") {
+        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+      }
+    } catch (e) {
+      console.error("AdSense error:", e);
+    }
+  }, []);
+
   const { params, navigate } = useRouter();
   const { user } = useAuth();
   const { toolId } = params;
@@ -1378,8 +1390,18 @@ export function ToolPage() {
         <div className="mt-16 space-y-8">
           <Card className="p-6 bg-muted/30 text-center">
             <p className="text-sm text-muted-foreground mb-2">Advertisement</p>
-            <p className="text-lg">Your Ad Could Be Here</p>
-            <p className="text-sm text-muted-foreground">Contact us for advertising opportunities</p>
+            {/* <p className="text-lg">Your Ad Could Be Here</p>
+            <p className="text-sm text-muted-foreground">Contact us for advertising opportunities</p> */}
+            <div ref={adRef}>
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-6060938536896052"
+              data-ad-slot="9898725029"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+          </div>
           </Card>
         </div>
       </div>
