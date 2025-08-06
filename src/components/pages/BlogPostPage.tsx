@@ -8,8 +8,66 @@ import { Separator } from "../ui/separator";
 import { useRouter } from "../../app/App";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useEffect, useRef } from "react";
-import Head from "next/head";
+import { Metadata } from "next";
 
+const mockPost = {
+    id: "1",
+    title: "10 Best SIP Mutual Funds for 2025",
+    content: `
+      <p>Systematic Investment Plan (SIP) is one of the most effective ways to build wealth over time. In this comprehensive guide, we'll explore the top 10 SIP mutual funds that offer excellent potential for 2025.</p>
+      
+      <h2>What is SIP?</h2>
+      <p>SIP allows you to invest a fixed amount regularly in mutual funds, helping you benefit from rupee cost averaging and the power of compounding.</p>
+      
+      <h2>Top 10 SIP Mutual Funds for 2025</h2>
+      <ol>
+        <li><strong>Axis Bluechip Fund</strong> - Large cap fund with consistent performance</li>
+        <li><strong>Mirae Asset Large Cap Fund</strong> - Diversified equity fund</li>
+        <li><strong>SBI Small Cap Fund</strong> - High growth potential</li>
+        <li><strong>HDFC Mid-Cap Opportunities Fund</strong> - Mid-cap exposure</li>
+        <li><strong>Parag Parikh Flexi Cap Fund</strong> - Multi-cap flexibility</li>
+      </ol>
+      
+      <h2>How to Choose the Right SIP Fund</h2>
+      <p>Consider factors like your risk tolerance, investment horizon, and financial goals when selecting SIP funds.</p>
+    `,
+    category: "investment",
+    author: "Rajesh Kumar",
+    publishDate: "Jan 15, 2025",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=400&fit=crop",
+    tags: ["SIP", "Mutual Funds", "Investment"],
+  };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const post = mockPost; 
+  const description = post.content.replace(/<[^>]*>/g, '').substring(0, 155);
+
+  return {
+    title: post.title,
+    description,
+    openGraph: {
+      title: post.title,
+      description,
+      url: `https://finflip.vercel.app/blog/${post.id}`,
+      type: "article",
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+      images: [post.image],
+    },
+  };
+}
 export function BlogPostPage() {
   const { params, navigate } = useRouter();
 
@@ -55,27 +113,6 @@ export function BlogPostPage() {
   }, []);
   return (
     <div className="min-h-screen py-8 px-4">
-      <Head>
-        {/* Basic SEO */}
-        <title>{mockPost.title}</title>
-        <meta name="description" content="Systematic Investment Plan (SIP) is one of the most effective ways to build wealth over time. In this comprehensive guide, we'll explore the top 10 SIP mutual funds that offer excellent potential for 2025." />
-        <meta name="keywords" content={mockPost.tags.join(", ")} />
-        <meta name="author" content={mockPost.author} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={mockPost.title} />
-        <meta property="og:description" content="Explore the top 10 SIP mutual funds that offer great potential for 2025 and learn how to pick the right one." />
-        <meta property="og:image" content={mockPost.image} />
-        <meta property="og:url" content={`https://finflip.vercel.app/blog/${mockPost.id}`} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="FinFlip" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={mockPost.title} />
-        <meta name="twitter:description" content="Explore the top 10 SIP mutual funds that offer great potential for 2025 and learn how to pick the right one." />
-        <meta name="twitter:image" content={mockPost.image} />
-      </Head>
       <div className="container mx-auto max-w-4xl">
         <Button variant="ghost" onClick={() => navigate("/blog")} className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
