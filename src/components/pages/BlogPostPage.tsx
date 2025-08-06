@@ -8,6 +8,7 @@ import { Separator } from "../ui/separator";
 import { useRouter } from "../../app/App";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useEffect, useRef } from "react";
+import Head from "next/head";
 
 export function BlogPostPage() {
   const { params, navigate } = useRouter();
@@ -54,6 +55,12 @@ export function BlogPostPage() {
   }, []);
   return (
     <div className="min-h-screen py-8 px-4">
+      <Head>
+        <title>{mockPost.title}</title>
+        <meta name="description" content={mockPost.content.replace(/<[^>]*>?/gm, "").slice(0, 160)} />
+        <meta property="og:title" content={mockPost.title} />
+        <meta property="og:image" content={mockPost.image} />
+      </Head>
       <div className="container mx-auto max-w-4xl">
         <Button variant="ghost" onClick={() => navigate("/blog")} className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
