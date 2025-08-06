@@ -11,7 +11,7 @@ import { useEffect, useRef } from "react";
 import { Metadata } from "next";
 
 const mockPost = {
-    id: "1",
+    id: 1,
     title: "10 Best SIP Mutual Funds for 2025",
     content: `
       <p>Systematic Investment Plan (SIP) is one of the most effective ways to build wealth over time. In this comprehensive guide, we'll explore the top 10 SIP mutual funds that offer excellent potential for 2025.</p>
