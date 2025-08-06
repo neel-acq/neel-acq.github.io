@@ -56,10 +56,25 @@ export function BlogPostPage() {
   return (
     <div className="min-h-screen py-8 px-4">
       <Head>
+        {/* Basic SEO */}
         <title>{mockPost.title}</title>
-        <meta name="description" content={mockPost.content.replace(/<[^>]*>?/gm, "").slice(0, 160)} />
+        <meta name="description" content="Systematic Investment Plan (SIP) is one of the most effective ways to build wealth over time. In this comprehensive guide, we'll explore the top 10 SIP mutual funds that offer excellent potential for 2025." />
+        <meta name="keywords" content={mockPost.tags.join(", ")} />
+        <meta name="author" content={mockPost.author} />
+
+        {/* Open Graph */}
         <meta property="og:title" content={mockPost.title} />
+        <meta property="og:description" content="Explore the top 10 SIP mutual funds that offer great potential for 2025 and learn how to pick the right one." />
         <meta property="og:image" content={mockPost.image} />
+        <meta property="og:url" content={`https://finflip.vercel.app/blog/${mockPost.id}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="FinFlip" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={mockPost.title} />
+        <meta name="twitter:description" content="Explore the top 10 SIP mutual funds that offer great potential for 2025 and learn how to pick the right one." />
+        <meta name="twitter:image" content={mockPost.image} />
       </Head>
       <div className="container mx-auto max-w-4xl">
         <Button variant="ghost" onClick={() => navigate("/blog")} className="mb-6">
